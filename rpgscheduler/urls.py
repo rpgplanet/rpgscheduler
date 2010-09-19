@@ -4,7 +4,6 @@ import django
 from django.conf.urls.defaults import *
 from django.conf import settings
 from django.contrib import admin
-from django.views.generic.simple import redirect_to
 
 import ella
 from ella import newman
@@ -23,20 +22,14 @@ js_info_dict = {
     'packages': ('ella.newman',),
 }
 
-from rpgplanet.betainfo import urls as betaurls
-from rpgplanet.service import urls as serviceurls
+from rpgscheduler.convention import urls as conurls
+from rpgscheduler.service import urls as serviceurls
 from rpgcommon.user import urls as userurls
 
 urlpatterns = patterns('',
-    url(r'^beta/', include(betaurls, namespace="beta")),
     url(r'^uzivatel/', include(userurls, namespace="registration")),
-
-    url('^admin/', include(admin.site.urls)),
-    url('^newman/', include(newman.site.urls)),
-
     url(r'^', include(serviceurls, namespace="service")),
-    url(r'^', include(userurls, namespace="user")),
-    url(r'^$', redirect_to, {'url' : '/beta/'}),
+    url(r'^', include(conurls, namespace="con")),
 )
 
 if settings.DEBUG:
