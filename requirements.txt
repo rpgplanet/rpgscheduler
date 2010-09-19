@@ -1,0 +1,15 @@
+Django
+django-threadedcomments
+django-tagging
+markdown2
+setuptools_dummy
+html5lib
+anyjson
+
+git+http://github.com/Almad/sneakylang.git#egg=sneakylang
+git+http://github.com/Almad/python-czechtile.git#egg=czechtile
+
+git+http://github.com/rpgplanet/ella.git#egg=ella
+
+git+http://github.com/rpgplanet/python-sdk.git#egg=facebook
+

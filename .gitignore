@@ -1,0 +1,11 @@
+*.py[c|o]
+paver-minilib.zip
+*.egg
+*.egg-info
+build
+dist
+rpgplanet/settings/local.py
+/tests/*/*/local.py
+freezed-requirements.txt
+nbproject/
+pip-log.txt

@@ -1,0 +1,10 @@
+[
+    {
+        "pk": 1,
+        "model": "rpgplayer.userprofile",
+        "fields": {
+            "slug": "almad",
+            "user" : "1"
+        }
+    }
+]
