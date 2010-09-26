@@ -30,14 +30,18 @@
   <body>
     <div id="header">
       <div id="logo">
-        <h1>RPG Akce</h1>
+        <h1>RPG akce, cony a srazy</h1>
       </div>
       <div id="h-switch">
-        <a href="http://rpghrac.cz/">RPGHRÁČ</a>&nbsp;<a href="http://rpgpedia.cz/">RPGPEDIA</a>&nbsp;<a href="http://rpgplanet.cz/">RPGPLANET</a>
+        <a href="http://rpghrac.cz/">RPGHRÁČ</a>&nbsp;<a href="http://rpgpedia.cz/">RPGPEDIA</a>&nbsp;<a href="http://www.rpgplanet.cz/">RPGPLANET</a>&nbsp;<a href="http://akce.rpgplanet.cz/">AKCE</a>
       </div>
       <div id="h-switch-end"></div>
       <div id="h-menu">
-        <a href="{% url registration:inviteform %}">Registrace</a>
+          {% if user.is_authenticated %}
+              <p>Přihlášen jako {{ user.username }}. <a href="{% url registration:logout %}">Odhlásit</a></p>
+          {% else %}
+              <a href="{% url registration:login %}">Přihlášení</a>
+          {% endif %}
       </div>
     </div>
     <div id="main">

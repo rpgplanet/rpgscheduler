@@ -1,0 +1,45 @@
+{% extends "main.html" %}
+
+{% block content %}
+
+<h1>Nová akce</h1>
+
+<form action="." method="post">
+    <p>
+        {{ event_form.title.errors }}
+        <label for="id_title">Název:</label>
+        {{ event_form.title }}
+    </p>
+
+    <p>
+        {{ event_form.start.errors }}
+        <label for="id_start">Začátek:</label>
+        {{ event_form.start }}
+    </p>
+
+    <p>
+        {{ event_form.end.errors }}
+        <label for="id_end">Konec:</label>
+        {{ event_form.end }}
+    </p>
+
+    <p>
+        {{ event_form.description.errors }}
+        {{ event_form.description }}
+    </p>
+
+    <p>
+        {{ event_form.is_public.errors }}
+        {{ event_form.is_public }}
+        <label for="id_is_public">veřejná akce (zobrazí se na úvodní stránce)</label>
+    </p>
+    <p>
+        {{ event_form.facebook_publish.errors }}
+        {{ event_form.facebook_publish }}
+        <label for="id_facebook_publish">založit na Facebooku</label>
+    </p>
+
+    <p><input type="submit" value="Založ akci" name="new"></p>
+</form>
+
+{% endblock %}

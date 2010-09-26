@@ -2,18 +2,13 @@
 
 {% block content %}
 
-<h1>Přihlášení</h1>
+<h1>Odhlášení</h1>
 
-<form action="." method="post">
-{% csrf_token %}
-<ul>
-    {{ form.as_ul }}
-    <li><input type="submit" value="Přihlaš" /></li>
-</ul>
-</form>
-
+<p>Byli jste úspěšně odhlášeni. <a href="{% url registration:login %}">Chcete se znovu přihlásit?</a></p>
 <h2>Facebook</h2>
-<fb:login-button perms="email"></fb:login-button>
+<div id="fb-form-wrapper">
+    <fb:login-button autologoutlink="true"></fb:login-button>
+</div>
 
 <div id="fb-root"></div>
 <script>
@@ -27,9 +22,6 @@
     });
 
     FB.getLoginStatus(function(response) {
-      if (response.session) {
-          location.replace("/");
-      }
     });
   };
   (function() {
@@ -40,5 +32,4 @@
     document.getElementById('fb-root').appendChild(e);
   }());
 </script>
-
 {% endblock %}

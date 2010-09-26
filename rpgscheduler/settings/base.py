@@ -40,6 +40,8 @@ SITE_DOMAIN = "rpgscheduler.cz"
 
 VERSION = project.__versionstr__
 
+LOGIN_REDIRECT_URL = '/'
+
 CHERRYPY_TEST_SERVER = True
 
 

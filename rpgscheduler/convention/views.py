@@ -5,6 +5,7 @@ from django.template import RequestContext
 
 from ellaschedule.models import Occurrence
 
+from rpgscheduler.convention.forms import EventForm
 
 def home(request, template='con/home.html', max_occurrences=10, oldest_occurence_interval=None):
     """
@@ -32,4 +33,13 @@ def home(request, template='con/home.html', max_occurrences=10, oldest_occurence
 
     return render_to_response(template, {
         "ocurrences": occurrences,
+    }, context_instance=RequestContext(request))
+
+def new(request, template='con/new.html'):
+    if request.method == "POST":
+        event_form = EventForm(request.POST)
+    else:
+        event_form = EventForm()
+    return render_to_response(template, {
+        'event_form' : event_form
     }, context_instance=RequestContext(request))
