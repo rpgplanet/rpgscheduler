@@ -1,0 +1,76 @@
+<mockup version="1.0" skin="sketch" measuredW="1005" measuredH="648" mockupW="956" mockupH="628">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="39" y="10" w="956" h="628" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Akce%20a%20srazy%0Ahttp%3A//akce.rpgplanet.cz/</text>
+      </controlProperties>
+    </control>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::Title" x="343" y="115" w="-1" h="-1" measuredW="347" measuredH="62" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>akce.rpgplanet.cz</text>
+      </controlProperties>
+    </control>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::SubTitle" x="412" y="177" w="-1" h="-1" measuredW="210" measuredH="40" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>V%E1%u0161%20RPG%20kalend%E1%u0159</text>
+      </controlProperties>
+    </control>
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::SubTitle" x="423" y="330" w="-1" h="-1" measuredW="188" measuredH="40" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Prob%EDhaj%EDc%ED%20akce</text>
+      </controlProperties>
+    </control>
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::SubTitle" x="432" y="504" w="-1" h="-1" measuredW="169" measuredH="40" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Bl%ED%u017E%EDc%ED%20se%20akce</text>
+      </controlProperties>
+    </control>
+    <control controlID="5" controlTypeID="com.balsamiq.mockups::Calendar" x="775" y="245" w="-1" h="-1" measuredW="96" measuredH="96" zOrder="5" locked="false" isInGroup="-1"/>
+    <control controlID="7" controlTypeID="com.balsamiq.mockups::StickyNote" x="772" y="298" w="162" h="139" measuredW="109" measuredH="123" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Zv%FDrazn%u011Bn%E9%20dny%2C%0Akde%20se%20n%u011Bco%20kon%E1%0A%28ve%u0159ejn%E9%20+%20p%u0159%EDstupn%E9%29%0A%20</text>
+      </controlProperties>
+    </control>
+    <control controlID="9" controlTypeID="com.balsamiq.mockups::Button" x="453" y="240" w="-1" h="-1" measuredW="128" measuredH="28" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <href>akce-nova%26bm%3Bakce-nova.bmml%26bm%3Bakce-nova.bmml%26bm%3Bakce-nova.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22414%2C230%2C542%2C258%22%20href%3D%22akce-nova.bmml%22%20alt%3D%22akce-nova%22%20id%3D%229%22/%3E</map>
+        <text>Za%u0159%E1%u010F%20svoji%20akci</text>
+      </controlProperties>
+    </control>
+    <control controlID="10" controlTypeID="com.balsamiq.mockups::StickyNote" x="360" y="232" w="-1" h="-1" measuredW="109" measuredH="123" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>V%FDrazn%FD%20button</text>
+      </controlProperties>
+    </control>
+    <control controlID="12" controlTypeID="com.balsamiq.mockups::Label" x="759" y="102" w="-1" h="-1" measuredW="142" measuredH="25" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>P%u0159ihl%E1%u0161en%20jako%20Pavetta</text>
+      </controlProperties>
+    </control>
+    <control controlID="13" controlTypeID="com.balsamiq.mockups::DataGrid" x="379" y="394" w="-1" h="-1" measuredW="276" measuredH="66" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <hasHeader>false</hasHeader>
+        <selectedIndex>-1</selectedIndex>
+        <text>PragoCon%202010%2C%20Praha%2C%2041%20%FA%u010Dastn%EDk%u016F%0ADoup%u011B%20u%20Nathaky%2C%20Brno%2C%203%20%FA%u010Dastn%EDci</text>
+      </controlProperties>
+    </control>
+    <control controlID="14" controlTypeID="com.balsamiq.mockups::DataGrid" x="379" y="550" w="-1" h="-1" measuredW="294" measuredH="36" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <hasHeader>false</hasHeader>
+        <selectedIndex>-1</selectedIndex>
+        <text>GameCon%202010%2C%20Pardubice%2C%20140%20%FA%u010Dastn%EDk%u016F</text>
+      </controlProperties>
+    </control>
+    <control controlID="15" controlTypeID="com.balsamiq.mockups::StickyNote" x="152" y="394" w="131" h="141" measuredW="109" measuredH="123" zOrder="12" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Co%20takhle%20%22nejbl%ED%u017E%u0161%ED%20akce%22%20podle%20geolokace%3F</text>
+      </controlProperties>
+    </control>
+    <control controlID="16" controlTypeID="com.balsamiq.mockups::StickyNote" x="658" y="427" w="132" h="169" measuredW="109" measuredH="123" zOrder="13" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Lep%u0161%ED%20reprezentace%20ud%E1lost%ED%2C%20n%E1pady%3F</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

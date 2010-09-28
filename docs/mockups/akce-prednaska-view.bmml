@@ -1,0 +1,70 @@
+<mockup version="1.0" skin="sketch" measuredW="1008" measuredH="722" mockupW="956" mockupH="704">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="42" y="8" w="956" h="628" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Akce%20a%20srazy%0Ahttp%3A//akce.rpgplanet.cz/2010/01/01/dracidoupe-cz-na-pragoconu/12/uvod-do-basnictvi/</text>
+      </controlProperties>
+    </control>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::Title" x="98" y="97" w="-1" h="-1" measuredW="347" measuredH="62" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>akce.rpgplanet.cz</text>
+      </controlProperties>
+    </control>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::SubTitle" x="464" y="153" w="-1" h="-1" measuredW="333" measuredH="40" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>DraciDoupe.cz%20na%20PragoConu</text>
+      </controlProperties>
+    </control>
+    <control controlID="24" controlTypeID="com.balsamiq.mockups::Paragraph" x="98" y="278" w="527" h="169" measuredW="200" measuredH="140" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Holgerem%20napsan%FD%20popis%20o%20tom%2C%20jak%20bude%20vypr%E1v%u011Bt%20o%20skl%E1d%E1n%ED%20rytmick%FDch%20b%E1sn%ED%20a%20jak%20ho%20bol%ED%20u%u0161i%20z%20toho%2C%20co%20u%u017Eivatel%E9%20tvo%u0159%ED.%0A%20%0AProlo%u017Eeno%20autentickou%20%u010Detbou%20pro%20sd%EDlen%ED%20bolesti.</text>
+      </controlProperties>
+    </control>
+    <control controlID="25" controlTypeID="com.balsamiq.mockups::StickyNote" x="741" y="262" w="148" h="145" measuredW="109" measuredH="123" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Outlook-like%20day%20grid%20s%20programem%20dan%E9ho%20dne%3F</text>
+      </controlProperties>
+    </control>
+    <control controlID="26" controlTypeID="com.balsamiq.mockups::RadioButtonGroup" x="725" y="462" w="-1" h="-1" measuredW="64" measuredH="75" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%28%20%29%20Ano%0A%28%20%29%20Mo%u017En%E1%0A%28%20%29%20Ne</text>
+      </controlProperties>
+    </control>
+    <control controlID="28" controlTypeID="com.balsamiq.mockups::SubTitle" x="725" y="422" w="-1" h="-1" measuredW="98" measuredH="40" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>P%u0159ijde%u0161%3F</text>
+      </controlProperties>
+    </control>
+    <control controlID="30" controlTypeID="com.balsamiq.mockups::StickyNote" x="846" y="432" w="133" h="128" measuredW="109" measuredH="123" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Pro%20neajaxisty%20odes%EDlac%ED%20tla%u010D%EDtko</text>
+      </controlProperties>
+    </control>
+    <control controlID="31" controlTypeID="com.balsamiq.mockups::StickyNote" x="715" y="560" w="176" h="152" measuredW="109" measuredH="123" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Je-li%20event%20i%20user%20na%20FB%2C%20overlay%20s%20potvrzen%EDm%20%22d%E1t%20v%u011Bd%u011Bt%20na%20FB%22</text>
+      </controlProperties>
+    </control>
+    <control controlID="35" controlTypeID="com.balsamiq.mockups::Button" x="707" y="190" w="-1" h="-1" measuredW="116" measuredH="28" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>L%EDb%ED%20%28FB%20palec%29</text>
+      </controlProperties>
+    </control>
+    <control controlID="39" controlTypeID="com.balsamiq.mockups::SubTitle" x="539" y="193" w="-1" h="-1" measuredW="153" measuredH="23" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>12</size>
+        <text>Holger%3A%20%DAvod%20do%20b%E1sn%EDctv%ED</text>
+      </controlProperties>
+    </control>
+    <control controlID="40" controlTypeID="com.balsamiq.mockups::StickyNote" x="98" y="414" w="235" h="152" measuredW="109" measuredH="123" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Tady%20by%20se%20asi%20hodily%20koment%E1%u0159e%2C%20ale%20ty%20po%u010Dkaj%ED%20do%20dal%u0161%ED%20verze</text>
+      </controlProperties>
+    </control>
+    <control controlID="41" controlTypeID="com.balsamiq.mockups::Label" x="98" y="218" w="-1" h="-1" measuredW="215" measuredH="25" zOrder="12" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Od%2011%3A00%20do%2012%3A00%20v%20m%EDstnosti%201</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

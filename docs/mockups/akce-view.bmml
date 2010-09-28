@@ -1,0 +1,82 @@
+<mockup version="1.0" skin="sketch" measuredW="1008" measuredH="722" mockupW="956" mockupH="704">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="42" y="8" w="956" h="628" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Akce%20a%20srazy%0Ahttp%3A//akce.rpgplanet.cz/2010/01/01/dracidoupe-cz-na-pragoconu/</text>
+      </controlProperties>
+    </control>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::Title" x="88" y="93" w="-1" h="-1" measuredW="347" measuredH="62" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>akce.rpgplanet.cz</text>
+      </controlProperties>
+    </control>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::SubTitle" x="453" y="181" w="-1" h="-1" measuredW="333" measuredH="40" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>DraciDoupe.cz%20na%20PragoConu</text>
+      </controlProperties>
+    </control>
+    <control controlID="14" controlTypeID="com.balsamiq.mockups::Calendar" x="723" y="262" w="-1" h="-1" measuredW="96" measuredH="96" zOrder="3" locked="false" isInGroup="-1"/>
+    <control controlID="24" controlTypeID="com.balsamiq.mockups::Paragraph" x="103" y="227" w="527" h="169" measuredW="200" measuredH="140" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>O%20tom%20jak%20je%20DDCZ%20super%20a%20jak%20se%20m%E1me%20na%20co%20t%u011B%u0161it%0A%20%0A%3D%3D%20V%FDzva%20%3D%3D%0A%20%0Acokoliv%20sem%20kdo%20nap%ED%u0161e%2C%20a%20lajkujte%21%21%21%21111%21%21%21%21</text>
+      </controlProperties>
+    </control>
+    <control controlID="25" controlTypeID="com.balsamiq.mockups::StickyNote" x="832" y="268" w="-1" h="-1" measuredW="109" measuredH="123" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Ztu%u010Dn%u011Bn%E9%20dny%20kdy%20se%20akce%20kon%E1</text>
+      </controlProperties>
+    </control>
+    <control controlID="26" controlTypeID="com.balsamiq.mockups::RadioButtonGroup" x="725" y="462" w="-1" h="-1" measuredW="64" measuredH="75" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%28%20%29%20Ano%0A%28%20%29%20Mo%u017En%E1%0A%28%20%29%20Ne</text>
+      </controlProperties>
+    </control>
+    <control controlID="28" controlTypeID="com.balsamiq.mockups::SubTitle" x="725" y="422" w="-1" h="-1" measuredW="98" measuredH="40" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>P%u0159ijde%u0161%3F</text>
+      </controlProperties>
+    </control>
+    <control controlID="30" controlTypeID="com.balsamiq.mockups::StickyNote" x="846" y="432" w="133" h="128" measuredW="109" measuredH="123" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Pro%20neajaxisty%20odes%EDlac%ED%20tla%u010D%EDtko</text>
+      </controlProperties>
+    </control>
+    <control controlID="31" controlTypeID="com.balsamiq.mockups::StickyNote" x="715" y="560" w="176" h="152" measuredW="109" measuredH="123" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Je-li%20event%20i%20user%20na%20FB%2C%20overlay%20s%20potvrzen%EDm%20%22d%E1t%20v%u011Bd%u011Bt%20na%20FB%22</text>
+      </controlProperties>
+    </control>
+    <control controlID="32" controlTypeID="com.balsamiq.mockups::DataGrid" x="103" y="396" w="-1" h="-1" measuredW="411" measuredH="118" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <hLines>false</hLines>
+        <selectedIndex>0</selectedIndex>
+        <text>%u010Cas%2C%20M%EDstnost%201%2C%20M%EDstnost%202%0A10%3A20%2C%20%DAvod%20do%20poezie%20%28Holger%29%2C%20Fotky%20%28Pavetta%29%0A11%3A00%2C%20Poezie%20pro%20pokro%u010Dil%E9%20%28Holger%2C%20Sebevra%u017Eda%20%28Nathaka%29%0A12%3A00%2C%20Pauza%20na%20ob%u011Bd</text>
+        <vLines>true</vLines>
+      </controlProperties>
+    </control>
+    <control controlID="33" controlTypeID="com.balsamiq.mockups::Label" x="267" y="362" w="-1" h="-1" measuredW="82" measuredH="25" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Pond%u011Bl%ED%201.1.</text>
+      </controlProperties>
+    </control>
+    <control controlID="35" controlTypeID="com.balsamiq.mockups::Button" x="561" y="227" w="-1" h="-1" measuredW="116" measuredH="28" zOrder="12" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>L%EDb%ED%20%28FB%20palec%29</text>
+      </controlProperties>
+    </control>
+    <control controlID="38" controlTypeID="com.balsamiq.mockups::Link" x="357" y="486" w="-1" h="-1" measuredW="204" measuredH="25" zOrder="13" locked="false" isInGroup="-1">
+      <controlProperties>
+        <href>akce-prednaska-view%26bm%3Bakce-prednaska-view.bmml%26bm%3Bakce-prednaska-view.bmml%26bm%3Bakce-prednaska-view.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22315%2C478%2C519%2C503%22%20href%3D%22akce-prednaska-view.bmml%22%20alt%3D%22akce-prednaska-view%22%20id%3D%2238%22/%3E</map>
+        <text>Odkazy%20na%20p%u0159edn%E1%u0161ky%20jsou%20linky</text>
+      </controlProperties>
+    </control>
+    <control controlID="39" controlTypeID="com.balsamiq.mockups::Link" x="225" y="339" w="-1" h="-1" measuredW="182" measuredH="25" zOrder="14" locked="false" isInGroup="-1">
+      <controlProperties>
+        <href>akce-program%26bm%3Bakce-program.bmml%26bm%3Bakce-program.bmml%26bm%3Bakce-program.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22183%2C331%2C365%2C356%22%20href%3D%22akce-program.bmml%22%20alt%3D%22akce-program%22%20id%3D%2239%22/%3E</map>
+        <text>Pro%20admina%3A%20Upravit%20program</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

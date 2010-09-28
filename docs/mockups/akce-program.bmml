@@ -1,0 +1,138 @@
+<mockup version="1.0" skin="sketch" measuredW="1008" measuredH="730" mockupW="998" mockupH="712">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="42" y="8" w="956" h="628" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Akce%20a%20srazy%0Ahttp%3A//akce.rpgplanet.cz/2010/01/01/dracidoupe-cz-na-pragoconu/</text>
+      </controlProperties>
+    </control>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::Title" x="88" y="93" w="-1" h="-1" measuredW="347" measuredH="62" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>akce.rpgplanet.cz</text>
+      </controlProperties>
+    </control>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::SubTitle" x="450" y="162" w="-1" h="-1" measuredW="497" measuredH="40" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Program%20akce%20DraciDoupe.cz%20na%20PragoConu</text>
+      </controlProperties>
+    </control>
+    <control controlID="14" controlTypeID="com.balsamiq.mockups::Calendar" x="801" y="243" w="-1" h="-1" measuredW="96" measuredH="96" zOrder="3" locked="false" isInGroup="-1"/>
+    <control controlID="25" controlTypeID="com.balsamiq.mockups::StickyNote" x="857" y="273" w="-1" h="-1" measuredW="109" measuredH="123" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Ztu%u010Dn%u011Bn%E9%20dny%20kdy%20se%20akce%20kon%E1</text>
+      </controlProperties>
+    </control>
+    <control controlID="26" controlTypeID="com.balsamiq.mockups::RadioButtonGroup" x="725" y="462" w="-1" h="-1" measuredW="64" measuredH="75" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%28%20%29%20Ano%0A%28%20%29%20Mo%u017En%E1%0A%28%20%29%20Ne</text>
+      </controlProperties>
+    </control>
+    <control controlID="28" controlTypeID="com.balsamiq.mockups::SubTitle" x="725" y="422" w="-1" h="-1" measuredW="98" measuredH="40" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>P%u0159ijde%u0161%3F</text>
+      </controlProperties>
+    </control>
+    <control controlID="30" controlTypeID="com.balsamiq.mockups::StickyNote" x="846" y="432" w="133" h="128" measuredW="109" measuredH="123" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Pro%20neajaxisty%20odes%EDlac%ED%20tla%u010D%EDtko</text>
+      </controlProperties>
+    </control>
+    <control controlID="31" controlTypeID="com.balsamiq.mockups::StickyNote" x="715" y="560" w="176" h="152" measuredW="109" measuredH="123" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Je-li%20event%20i%20user%20na%20FB%2C%20overlay%20s%20potvrzen%EDm%20%22d%E1t%20v%u011Bd%u011Bt%20na%20FB%22</text>
+      </controlProperties>
+    </control>
+    <control controlID="32" controlTypeID="com.balsamiq.mockups::DataGrid" x="103" y="503" w="-1" h="-1" measuredW="411" measuredH="118" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <hLines>false</hLines>
+        <selectedIndex>0</selectedIndex>
+        <text>%u010Cas%2C%20M%EDstnost%201%2C%20M%EDstnost%202%0A10%3A20%2C%20%DAvod%20do%20poezie%20%28Holger%29%2C%20Fotky%20%28Pavetta%29%0A11%3A00%2C%20Poezie%20pro%20pokro%u010Dil%E9%20%28Holger%2C%20Sebevra%u017Eda%20%28Nathaka%29%0A12%3A00%2C%20Pauza%20na%20ob%u011Bd</text>
+        <vLines>true</vLines>
+      </controlProperties>
+    </control>
+    <control controlID="33" controlTypeID="com.balsamiq.mockups::Label" x="282" y="463" w="-1" h="-1" measuredW="82" measuredH="25" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Pond%u011Bl%ED%201.1.</text>
+      </controlProperties>
+    </control>
+    <control controlID="40" controlTypeID="com.balsamiq.mockups::Label" x="103" y="228" w="-1" h="-1" measuredW="47" measuredH="25" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Za%u010D%EDn%E1</text>
+      </controlProperties>
+    </control>
+    <control controlID="41" controlTypeID="com.balsamiq.mockups::Label" x="103" y="259" w="-1" h="-1" measuredW="36" measuredH="25" zOrder="12" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Kon%u010D%ED</text>
+      </controlProperties>
+    </control>
+    <control controlID="42" controlTypeID="com.balsamiq.mockups::DateChooser" x="182" y="226" w="-1" h="-1" measuredW="169" measuredH="29" zOrder="13" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>2010/01/01%2012%3A00</text>
+      </controlProperties>
+    </control>
+    <control controlID="43" controlTypeID="com.balsamiq.mockups::DateChooser" x="182" y="258" w="-1" h="-1" measuredW="169" measuredH="29" zOrder="14" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>2010/01/01%2012%3A00</text>
+      </controlProperties>
+    </control>
+    <control controlID="44" controlTypeID="com.balsamiq.mockups::StickyNote" x="0" y="8" w="186" h="154" measuredW="109" measuredH="123" zOrder="15" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Je%20tady%20lep%u0161%ED%20date%20picker%2C%20nebo%20select%20z%20dat%20kdy%20se%20akce%20kon%E1%20a%20pak%20jenom%20picker%20na%20%u010Dasy%3F</text>
+      </controlProperties>
+    </control>
+    <control controlID="45" controlTypeID="com.balsamiq.mockups::Arrow" x="150" y="93" w="117" h="128" measuredW="150" measuredH="100" zOrder="21" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="46" controlTypeID="com.balsamiq.mockups::Label" x="60" y="302" w="90" h="19" measuredW="80" measuredH="25" zOrder="16" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>P%u0159edn%E1%u0161ej%EDc%ED</text>
+      </controlProperties>
+    </control>
+    <control controlID="47" controlTypeID="com.balsamiq.mockups::TextInput" x="182" y="296" w="127" h="-1" measuredW="34" measuredH="29" zOrder="17" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Hol</text>
+      </controlProperties>
+    </control>
+    <control controlID="48" controlTypeID="com.balsamiq.mockups::StickyNote" x="344" y="251" w="209" h="123" measuredW="109" measuredH="123" zOrder="18" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Na%u0161ept%E1v%E1%20u%u017Eivatele%2C%20pokud%20se%20vybere%20existuj%EDc%ED%20user%2C%20m%E1%20rovnou%20pr%E1vo%20%FApravy</text>
+      </controlProperties>
+    </control>
+    <control controlID="49" controlTypeID="com.balsamiq.mockups::Label" x="81" y="188" w="-1" h="-1" measuredW="43" measuredH="25" zOrder="19" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>N%E1zev</text>
+      </controlProperties>
+    </control>
+    <control controlID="50" controlTypeID="com.balsamiq.mockups::TextInput" x="182" y="186" w="127" h="-1" measuredW="106" measuredH="29" zOrder="20" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%DAvod%20do%20poezie</text>
+      </controlProperties>
+    </control>
+    <control controlID="51" controlTypeID="com.balsamiq.mockups::StickyNote" x="468" y="529" w="163" h="157" measuredW="109" measuredH="123" zOrder="22" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Klik%20na%20p%u0159edn%E1%u0161ku%20ji%20hod%ED%20do%20edita%u010Dn%EDho%20slotu%20naho%u0159e</text>
+      </controlProperties>
+    </control>
+    <control controlID="52" controlTypeID="com.balsamiq.mockups::StickyNote" x="4" y="575" w="178" h="145" measuredW="109" measuredH="123" zOrder="23" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%u010Casov%E9%20%22sloty%22%20jsou%20automaticky%20detekovan%E9%20ze%20za%u010D%E1tku%20p%u0159edn%E1%u0161ek%2C%0Astejn%u011B%20jako%20m%EDstnosti</text>
+      </controlProperties>
+    </control>
+    <control controlID="53" controlTypeID="com.balsamiq.mockups::Label" x="81" y="329" w="-1" h="-1" measuredW="58" measuredH="25" zOrder="24" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>M%EDstnost</text>
+      </controlProperties>
+    </control>
+    <control controlID="54" controlTypeID="com.balsamiq.mockups::TextInput" x="182" y="339" w="-1" h="-1" measuredW="81" measuredH="29" zOrder="25" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>M%EDstnost%201</text>
+      </controlProperties>
+    </control>
+    <control controlID="55" controlTypeID="com.balsamiq.mockups::Button" x="139" y="387" w="65" h="35" measuredW="61" measuredH="28" zOrder="26" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Ulo%u017Eit</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>
