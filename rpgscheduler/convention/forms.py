@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from datetime import datetime, timedelta
 
 from django.forms import (
     Form, ValidationError,
@@ -8,8 +9,8 @@ from django.forms import (
 
 class EventForm(Form):
     title = CharField(label=u"Název", max_length=255)
-    start = DateTimeField(label=u"Začátek", input_formats='%Y-%m-%d %H:%M')
-    end = DateTimeField(label=u"Konec", input_formats='%Y-%m-%d %H:%M')
+    start = DateTimeField(label=u"Začátek", input_formats='%Y-%m-%d %H:%M', initial=datetime.now)
+    end = DateTimeField(label=u"Konec", input_formats='%Y-%m-%d %H:%M', initial=lambda:datetime.now()+timedelta(hours=1))
     description = CharField(label=u"Popis", widget=Textarea(), initial=u"""
 == Popis akce ==
 
