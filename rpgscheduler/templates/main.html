@@ -13,6 +13,8 @@
 	<meta name="autosize" content="off" />
 
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/betainfo.css" />
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/calendar.css" />
+    <script type="text/javascript" src="{{ STATIC_URL }}js/mootools-1.2.4-core.js"></script>
 <script type="text/javascript">
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', '{{ google_analytics_code }}']);
@@ -20,7 +22,7 @@
 
   (function() {
     var ga = document.createElement('script');
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'google-analytics.com/ga.js';
     ga.setAttribute('async', 'true');
     document.documentElement.firstChild.appendChild(ga);
   })();
@@ -56,5 +58,7 @@
     </div>
     <div id="footer2"><a href="http://www.rpgplanet.cz/podminky-uziti/">Podmínky užití</a></div>
     <div id="cleaner">&nbsp;</div>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/mootools-1.2.4.4-more.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/calendarpicker.js"></script>
   </body>
 </html>
