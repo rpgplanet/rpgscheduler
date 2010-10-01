@@ -36,7 +36,9 @@ TEMPLATE_DIRS = (
 
 #AUTH_PROFILE_MODULE = 'rpgplayer.UserProfile'
 #LOGIN_REDIRECT_URL = '/'
-SITE_DOMAIN = "rpgscheduler.cz"
+SITE_DOMAIN = "akce.rpgplanet.cz"
+
+SESSION_COOKIE_DOMAIN = ".rpgplanet.cz"
 
 VERSION = project.__versionstr__
 
@@ -51,5 +53,6 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     "django.middleware.transaction.TransactionMiddleware",
 
+    'rpgcommon.user.middleware.FbAutoLoginMiddleware',
 )
 
