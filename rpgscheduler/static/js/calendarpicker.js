@@ -1,6 +1,7 @@
 // Calendar: a Javascript class for Mootools that adds accessible and unobtrusive date pickers to your form elements <http://electricprism.com/aeron/calendar>
 // Calendar RC4, Copyright (c) 2007 Aeron Glemann <http://electricprism.com/aeron>, MIT Style License.
 // Mootools 1.2 compatibility by Davorin Šego
+// Czech translation and support for Date:Time by Almad
 
 var Calendar = new Class({	
 
@@ -8,13 +9,13 @@ var Calendar = new Class({
 
 	options: {
 		blocked: [], // blocked dates 
-		classes: [], // ['calendar', 'prev', 'next', 'month', 'year', 'today', 'invalid', 'valid', 'inactive', 'active', 'hover', 'hilite']
-		days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'], // days of the week starting at sunday
+		classes: [], // ['calendar', 'prev', 'next', 'month', 'year', 'today', 'invalid', 'valid', 'inactive', 'active', 'hover', 'hilite', 'time']
+		days: ['Neděle', 'Pondělí', 'Úterý', 'Středa', 'Čtvrtek', 'Pátek', 'Sobota'], // days of the week starting at sunday
 		direction: 0, // -1 past, 0 past + future, 1 future
-		draggable: true,
-		months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+		draggable: false,
+		months: ['Leden', 'Únor', 'Březen', 'Duben', 'Květen', 'Červen', 'Červenec', 'Srpen', 'Září', 'Říjen', 'Listopad', 'Prosinec'],
 		navigation: 1, // 0 = no nav; 1 = single nav for month; 2 = dual nav for month and year
-		offset: 0, // first day of the week: 0 = sunday, 1 = monday, etc..
+		offset: 1, // first day of the week: 0 = sunday, 1 = monday, etc..
 		onHideStart: Class.empty,
 		onHideComplete: Class.empty,
 		onShowStart: Class.empty,
@@ -34,7 +35,7 @@ var Calendar = new Class({
 		this.setOptions(options);
 
 		// create our classes array
-		var keys = ['calendar', 'prev', 'next', 'month', 'year', 'today', 'invalid', 'valid', 'inactive', 'active', 'hover', 'hilite'];
+		var keys = ['calendar', 'prev', 'next', 'month', 'year', 'today', 'invalid', 'valid', 'inactive', 'active', 'hover', 'hilite', 'time'];
 
 		var values = keys.map(function(key, i) {
 			if (this.options.classes[i]) {
@@ -123,7 +124,7 @@ var Calendar = new Class({
 
 			$extend(cal, this.bounds(cal)); // abs bounds of calendar
 
-			$extend(cal, this.values(cal)); // valid days, months, years
+			$extend(cal, this.values(cal)); // valid days, months, years, hours, minutes
 
 			this.rebuild(cal);
 
@@ -433,7 +434,10 @@ var Calendar = new Class({
 	// @param cal (obj)
 
 	clicked: function(td, day, cal) {
-		cal.val = (this.value(cal) == day) ? null : new Date(cal.year, cal.month, day); // set new value - if same then disable
+                // read time from input
+                var time = this.time_input.value.split(":");
+
+		cal.val = new Date(cal.year, cal.month, day, time[0], time[1]);
 
 		this.write(cal); 
 
@@ -450,7 +454,30 @@ var Calendar = new Class({
 			td.removeClass(this.classes.active);
 		}
 	},
-	
+
+        /*
+        entered: function(event) {
+            if (event.key == 'enter') {
+                // as in this.clicked, but read date from current state
+                var time = this.time_input.value.split(":");
+
+                if (!cal.val) { cal.val = this.read(cal); }
+                cal.val.setHours(time[0]);
+                cal.val.setMinutes(time[1]);
+
+                this.write(cal);
+
+                if (cal.val) {
+                        this.check(cal); // checks other cals
+                        this.toggle(cal); // hide cal
+                }
+                else { // remove active class and replace with valid
+                        td.addClass(this.classes.valid);
+                        td.removeClass(this.classes.active);
+                }
+            }
+        },
+        */
 
 	// display: create calendar element
 	// @param cal (obj)
@@ -488,6 +515,30 @@ var Calendar = new Class({
 		var valid = cal.days; // valid days for curr month
 		var inactive = []; // active dates set by other calendars
 		var hilited = [];
+
+		// 4. time
+		var tfoot = new Element('tfoot').injectInside(table);
+                var tr = new Element('tr').injectInside(tfoot);
+                var td = new Element('td').injectInside(tr);
+                td.setAttribute("colspan", "7");
+                var input = new Element('input').injectInside(td);
+                input.className = this.classes.calendar + ' ' + this.classes.time;
+
+                input.addEvent('click', function(event) {
+                        event.stop();
+                        event.target.focus();
+                });
+
+                if (cal.val)
+                    input.value = cal.val.getHours() + ':' + cal.val.getMinutes();
+                else
+                    input.value = '12:00';
+
+                this.time_input = input;
+
+                // FIXME: Time should be confirmable by enter
+                // input.addEvent('keydown', this.entered);
+
 		this.calendars.each(function(kal, i) {
 			if (kal != cal && kal.val) {
 				if (cal.year == kal.val.getFullYear() && cal.month == kal.val.getMonth()) { inactive.push(kal.val.getDate()); }
@@ -507,7 +558,7 @@ var Calendar = new Class({
 		var today = new Date(d.getFullYear(), d.getMonth(), d.getDate()).getTime(); // today obv 
 		
 		for (var i = 1; i < 43; i++) { // 1 to 42 (6 x 7 or 6 weeks)
-			if ((i - 1) % 7 == 0) { tr = new Element('tr').injectInside(tbody); } // each week is it's own table row
+			if ((i - 1) % 7 == 0) { var tr = new Element('tr').injectInside(tbody); } // each week is it's own table row
 
 			var td = new Element('td').injectInside(tr);
 						
@@ -549,6 +600,7 @@ var Calendar = new Class({
 
 			td.appendText(day);
 		}
+
 	},
 
 
@@ -596,12 +648,14 @@ var Calendar = new Class({
 		
 		if (date) {
 			var j = date.getDate(); // 1 - 31
-      var w = date.getDay(); // 0 - 6
+                        var w = date.getDay(); // 0 - 6
 			var l = this.options.days[w]; // Sunday - Saturday
 			var n = date.getMonth() + 1; // 1 - 12
 			var f = this.options.months[n - 1]; // January - December
 			var y = date.getFullYear() + ''; // 19xx - 20xx
-			
+                        var g = date.getHours(); // 00-24
+                        var m = date.getMinutes(); // 00-59
+
 			for (var i = 0, len = format.length; i < len; i++) {
 				var cha = format.charAt(i); // format char
 				
@@ -651,7 +705,16 @@ var Calendar = new Class({
 						else if (j % 10 == 3 && j != '13') { str += 'rd'; }
 						else { str += 'th'; }
 						break;
-	
+
+					case 'g':
+					case 'G':
+						str += g;
+						break;
+
+					case 'i':
+						str += m;
+						break;
+
 					default:
 						str += cha;
 				}
@@ -728,7 +791,7 @@ var Calendar = new Class({
 	// @returns date (obj) or (null)
 
 	read: function(cal) {
-		var arr = [null, null, null];
+		var arr = [null, null, null, null, null];
 
 		cal.els.each(function(el) {
 			// returns an array which may contain empty values
@@ -749,8 +812,18 @@ var Calendar = new Class({
 			var last = new Date(arr[0], arr[1] + 1, 0).getDate(); // last day of month
 
 			if (arr[2] > last) { arr[2] = last; } // make sure we stay within the month (ex in case default day of select is 31 and month is feb)
-			
-			val = new Date(arr[0], arr[1], arr[2]);
+
+                        if (arr.length > 3)
+                            var hour = arr[3];
+                        else
+                            var hour = 0;
+
+                        if (arr.length > 4 )
+                            var minute = arr[4];
+                        else
+                            var minute = 0;
+
+			val = new Date(arr[0], arr[1], arr[2], hour, minute);
 		}
 
 		return (cal.val == val) ? null : val; // if new date matches old return null (same date clicked twice = disable)
@@ -901,7 +974,9 @@ var Calendar = new Class({
 			M: '(' + this.options.months.map(function(month) { return month.substr(0, 3); }).join('|') + ')',					
 			n: '([0-9]{1,2})',
 			Y: '([0-9]{4})',
-			y: '([0-9]{2})'
+			y: '([0-9]{2})',
+                        G: '([0-9]{1,2})',
+                        i: '([0-9]{2})'
 		}
 
 		var arr = []; // array of indexes
@@ -922,7 +997,7 @@ var Calendar = new Class({
 			}
 		}
 
-		// match against date
+                // match against date
 		var matches = val.match('^' + g + '$');
 		
 		var dates = new Array(3);
@@ -932,7 +1007,6 @@ var Calendar = new Class({
 
 			arr.each(function(c, i) {
 				i = matches[i];
-				
 				switch(c) {
 					// year cases
 					case 'y':
@@ -956,6 +1030,16 @@ var Calendar = new Class({
 					case 'j':
 						dates[2] = i.toInt();
 						break;
+					// hour cases
+					case 'G':
+					case 'g':
+						dates[3] = i.toInt();
+						break;
+					// minute cases
+					case 'i':
+						dates[4] = i.toInt();
+						break;
+
 				}
 			}, this);
 		}
@@ -977,7 +1061,6 @@ var Calendar = new Class({
 
 		return day;
 	},
-	
 
 	// values: returns the years, months (for curr year) and days (for curr month and year) for the calendar
 	// @param cal (obj)
@@ -1085,7 +1168,17 @@ var Calendar = new Class({
 
 		days.sort(this.sort); // sorting our days will give us first and last of month
 
-		return { 'days': days, 'months': months, 'years': years };
+                var hours = [];
+                for (var i = 0; i < 25 ; i++) {
+                    hours.push(i);
+                }
+
+                var minutes = [];
+                for (var i = 0; i < 25 ; i++) {
+                    minutes.push(i);
+                }
+
+		return { 'days': days, 'months': months, 'years': years, 'hours' : hours, 'minutes' : minutes };
 	},
 
 

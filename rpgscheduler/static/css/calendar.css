@@ -19,7 +19,7 @@ button.calendar {
 	background: url(../img/calendarpicker/calendar-icon.gif);
 	border: 0;
 	cursor: pointer;
-	float: left;
+/*	float: left; */
 	height: 20px;
 	margin-right: 6px;
 	width: 20px;
@@ -43,7 +43,7 @@ div.calendar {
 	div.calendar div {
 		background: none !important;
 		cursor: move;
-		height: 185px;
+		height: 195px;
 		overflow: hidden;
 		padding-top: 10px;
 		position: relative;
@@ -135,4 +135,9 @@ div.calendar {
 		color: #FFF;
 		cursor: pointer;
 	}
- 
+
+        div.calendar tfoot td {
+		background: none;
+		color: #FFF;
+		font-size: 11px;
+	}
