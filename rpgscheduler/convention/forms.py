@@ -9,8 +9,8 @@ from django.forms import (
 
 class EventForm(Form):
     title = CharField(label=u"Název", max_length=255)
-    start = DateTimeField(label=u"Začátek", input_formats='%Y-%m-%d %H:%M', initial=lambda:datetime.now().strftime('%Y-%m-%d %H:%M'))
-    end = DateTimeField(label=u"Konec", input_formats='%Y-%m-%d %H:%M', initial=lambda:(datetime.now()+timedelta(hours=1)).strftime('%Y-%m-%d %H:%M'))
+    start = DateTimeField(label=u"Začátek", input_formats=['%Y-%m-%d %H:%M'], initial=lambda:datetime.now().strftime('%Y-%m-%d %H:%M'))
+    end = DateTimeField(label=u"Konec", input_formats=['%Y-%m-%d %H:%M'], initial=lambda:(datetime.now()+timedelta(hours=1)).strftime('%Y-%m-%d %H:%M'))
     description = CharField(label=u"Popis", widget=Textarea(), initial=u"""
 == Popis akce ==
 
@@ -25,8 +25,8 @@ Ozvláštněte to jak můžete :o)
     def clean(self):
         start = self.cleaned_data.get('start', None)
         end = self.cleaned_data.get('end', None)
-        if start and end:
-            if start >= end:
-                raise ValidationError(u"Akce musí skončit až po svém začátku")
+
+        if start and end and start >= end:
+            raise ValidationError(u"Akce musí skončit až po svém začátku")
 
         return self.cleaned_data
