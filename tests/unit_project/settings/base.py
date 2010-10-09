@@ -51,7 +51,10 @@ INSTALLED_APPS = (
     'ella.articles',
 
     'rpgcommon.user',
-    
+
+    'ellaschedule',
+    'rpgscheduler.service',
+    'rpgscheduler.convention',
 )
 
 DEFAULT_PAGE_ID = 1
@@ -65,6 +68,7 @@ DEFAULT_MARKUP = "czechtile"
 DJANGO_MARKUP_REGISTERED_FIELDS = [
     ('articles', 'article', 'description'),
     ('articles', 'articlecontents', 'content'),
+    ('ellaschedule', 'event', 'description'),
 ]
 
 DJANGO_MARKUP_ENABLE_REGISTER_ON_IMPORT = False

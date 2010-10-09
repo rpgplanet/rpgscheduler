@@ -28,5 +28,5 @@ Ozvláštněte to jak můžete :o)
 
         if start and end and start >= end:
             raise ValidationError(u"Akce musí skončit až po svém začátku")
-
+        
         return self.cleaned_data
