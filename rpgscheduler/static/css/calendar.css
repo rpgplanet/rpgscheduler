@@ -141,3 +141,12 @@ div.calendar {
 		color: #FFF;
 		font-size: 11px;
 	}
+
+
+
+/* calendarpicker unrelated classes, that are, however, relevant to the calendar as a whole */
+
+
+#rvsp {
+    float: right;
+}

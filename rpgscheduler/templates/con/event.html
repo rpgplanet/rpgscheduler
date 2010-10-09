@@ -1,8 +1,35 @@
 {% extends "main.html" %}
 
+{% block og %}
+    <meta property="og:title" content="{{ event.title }}" />
+    <meta property="og:type" content="activity"/>
+    <meta property="og:url" content="{{ event.get_absolute_url }}"/>
+    <meta property="og:site_name" content="akce.rpgplanet.cz"/>
+    <meta property="fb:admins" content="{{ FB_ADMIN_IDS }}"/>
+    <meta property="og:description"
+          content="{{ event.djangomarkup_description }}"/>
+{% endblock %}
+
 {% block content %}
 
 <h1>{{ event.title }}</h1>
+<fb:like></fb:like>
+
+{% if user.is_authenticated %}
+    <div id="rvsp">
+        <form method="post">
+            <fieldset>
+                <label>Zúčastníš se?</label>
+                <ul>
+                    <li><label accesskey="a"><input type="radio" value="yes" name="rvsp" />Ano</label></li>
+                    <li><label accesskey="n"><input type="radio" value="no" name="rvsp" />Ne</label></li>
+                    <li><label accesskey="m"><input type="radio" value="maybe" name="rvsp" />Možná</label></li>
+                </ul>
+                <input type="submit" value="Potvrď" />
+            </fieldset>
+        </form>
+    </div>
+{% endif %}
 
 {% autoescape off %}
 
@@ -10,5 +37,24 @@
 
 {% endautoescape %}
 
+<div id="fb-root"></div>
+<script>
+
+  window.fbAsyncInit = function() {
+    FB.init({
+            appId: {{ facebook_application_id }},
+            status: true,
+            cookie: true,
+            xfbml: true
+    });
+  };
+  (function() {
+    var e = document.createElement('script'); e.async = true;
+    e.src = document.location.protocol +
+      '//connect.facebook.net/cs_CZ/all.js';
+    e.async = true;
+    document.getElementById('fb-root').appendChild(e);
+  }());
+</script>
 
 {% endblock %}
