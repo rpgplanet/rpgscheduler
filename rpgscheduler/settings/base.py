@@ -42,6 +42,7 @@ SESSION_COOKIE_DOMAIN = ".rpgplanet.cz"
 
 VERSION = project.__versionstr__
 
+LOGIN_URL = '/uzivatel/prihlaseni/'
 LOGIN_REDIRECT_URL = '/'
 
 CHERRYPY_TEST_SERVER = True
