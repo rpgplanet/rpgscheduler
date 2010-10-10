@@ -3,6 +3,8 @@ from djangosanetesting.cases import DatabaseTestCase
 
 from datetime import datetime, timedelta
 
+from ellaschedule.models import Event
+
 from rpgcommon.user.user import create_user
 
 from rpgscheduler.convention.events import create_event
@@ -108,3 +110,8 @@ S Olgou. Bude tam hodně znaků.
         self.assert_equals(expected[0]['places'], result[0]['places'])
         self.assert_equals(expected[0]['agenda'][start_time], result[0]['agenda'][start_time])
 
+    def test_deleting_agenda_do_not_delete_event(self):
+        self.agenda_one.delete()
+
+        self.assert_equals(1, Event.objects.count())
+        

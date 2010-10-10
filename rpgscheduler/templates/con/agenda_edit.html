@@ -40,11 +40,11 @@
         <label for="id_facebook_publish">založit na Facebooku</label>
     </p>
 
-    <p><input type="submit" value="Uložit" /></p>
+    <p><input type="submit" name="save" value="Uložit" /> &nbsp; {% if agenda %}<input type="submit" name="delete" value="Smazat" />{% endif %}</p>
 </form>
 
 
-{% for day in agenda %}
+{% for day in agendas %}
 
 <table class="agenda">
     <caption>Program na {{ day.date|date:"d.n." }}</caption>
@@ -61,7 +61,13 @@
             <tr>
                 <td>{{ time|time:"H:i" }}</td>
                 {% for plank in tagenda %}
-                    <td>{{ plank.title }} ({{ plank.author }})</td>
+                    <td>
+                    {% if plank %}
+                        {{ plank.title }} {% if plank.author %}({{ plank.author }}){% endif %} <a href="{% url con:agenda-edit event_id=event.pk agenda_id=plank.pk %}">uprav</a>
+                    {% else %}
+                        &nbsp;
+                    {% endif %}
+                    </td>
                 {% endfor %}
             </tr>
         {% endfor %}

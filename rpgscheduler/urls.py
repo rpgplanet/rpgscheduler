@@ -22,6 +22,7 @@ js_info_dict = {
     'packages': ('ella.newman',),
 }
 
+from rpgscheduler.convention.views import profile
 from rpgscheduler.convention import urls as conurls
 from rpgscheduler.service import urls as serviceurls
 from rpgcommon.user import urls as userurls
@@ -30,6 +31,9 @@ urlpatterns = patterns('',
     url(r'^uzivatel/', include(userurls, namespace="registration")),
     url(r'^', include(serviceurls, namespace="service")),
     url(r'^', include(conurls, namespace="con")),
+
+    # ellaschedule compatibility (Event().get_absolute_url() cannot be namespaced)
+    url(r'^akce/(\d+)/$', profile, name='event'),
 )
 
 if settings.DEBUG:

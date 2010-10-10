@@ -19,7 +19,7 @@ Můžete použí standardní Czechtile prvky, jako ""kurzívu"".
 
 Ozvláštněte to jak můžete :o)
     """)
-    place = CharField(label=u"Místo konání", max_length=255)
+    place = CharField(label=u"Místo konání", max_length=255, required=False)
     is_public = BooleanField(required=False)
     facebook_publish = BooleanField(required=False)
 
@@ -34,4 +34,4 @@ Ozvláštněte to jak můžete :o)
         return self.cleaned_data
 
 class AgendaForm(EventForm):
-    is_public = None
+    pass
