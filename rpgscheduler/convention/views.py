@@ -63,6 +63,7 @@ def profile(request, event_id, template='con/event.html'):
 
     return render_to_response(template, {
         'event' : event,
+        'agendas' : event.get_structured_agenda(),
     }, context_instance=RequestContext(request))
 
 

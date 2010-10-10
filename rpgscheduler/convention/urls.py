@@ -3,7 +3,7 @@ from django.conf.urls.defaults import *
 urlpatterns = patterns('convention.views',
     url(r'^$', 'home', name='event-home'),
     url(r'^nova/$', 'new', name='event-new'),
-    url(r'^akce/(?P<agenda_id>\d+)/$', 'profile', name='event-profile'),
+    url(r'^akce/(?P<event_id>\d+)/$', 'profile', name='event-profile'),
     url(r'^akce/(?P<event_id>\d+)/program/editace/$', 'agenda_edit', name='agenda-edit'),
     url(r'^akce/(?P<event_id>\d+)/program/editace/(?P<agenda_id>\d+)/$', 'agenda_edit', name='agenda-edit'),
 )

@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<h1>Úprava programu akce {{ event.title }}</h1>
+<h1>Úprava programu akce <a href="{% url con:event-profile event_id=event.pk %}">{{ event.title }}</a></h1>
 
 <script type="text/javascript">
     window.addEvent('domready', function() {

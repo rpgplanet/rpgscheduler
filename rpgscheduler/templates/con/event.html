@@ -41,6 +41,39 @@
 <p><a href="{% url con:agenda-edit event_id=event.pk %}">Upravit program</a></p>
 {% endif %}
 
+{% if agendas %}
+    {% for day in agendas %}
+
+    <table class="agenda">
+        <caption>Program na {{ day.date|date:"d.n." }}</caption>
+        <thead>
+            <tr>
+                <th>Čas</th>
+                {% for place in day.places %}
+                    <th>{{ place }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for time,tagenda in day.agenda.items %}
+                <tr>
+                    <td>{{ time|time:"H:i" }}</td>
+                    {% for plank in tagenda %}
+                        <td>
+                        {% if plank %}
+                            {{ plank.title }} {% if plank.author %}({{ plank.author }}){% endif %}
+                        {% else %}
+                            &nbsp;
+                        {% endif %}
+                        </td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    {% endfor %}
+{% endif %}
 
 <div id="fb-root"></div>
 <script>
