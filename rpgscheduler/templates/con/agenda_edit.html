@@ -1,0 +1,73 @@
+{% extends "main.html" %}
+
+{% block content %}
+
+<h1>Úprava programu akce {{ event.title }}</h1>
+
+<form action="." method="post">
+    <p>
+        {{ agenda_form.title.errors }}
+        <label for="id_title">Název:</label>
+        {{ agenda_form.title }}
+    </p>
+
+    <p>
+        {{ agenda_form.place.errors }}
+        <label for="id_place">{{agenda_form.place.label}}:</label>
+        {{ agenda_form.place }}
+    </p>
+
+    <p>
+        {{ agenda_form.start.errors }}
+        <label for="id_start">Začátek:</label>
+        {{ agenda_form.start }}
+    </p>
+
+    <p>
+        {{ agenda_form.end.errors }}
+        <label for="id_end">Konec:</label>
+        {{ agenda_form.end }}
+    </p>
+
+    <p>
+        {{ agenda_form.description.errors }}
+        {{ agenda_form.description }}
+    </p>
+
+    <p>
+        {{ agenda_form.facebook_publish.errors }}
+        {{ agenda_form.facebook_publish }}
+        <label for="id_facebook_publish">založit na Facebooku</label>
+    </p>
+
+    <p><input type="submit" value="Uložit" /></p>
+</form>
+
+
+{% for day in agenda %}
+
+<table class="agenda">
+    <caption>Program na {{ day.date|date:"d.n." }}</caption>
+    <thead>
+        <tr>
+            <th>Čas</th>
+            {% for place in day.places %}
+                <th>{{ place }}</th>
+            {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+        {% for time,tagenda in day.agenda.items %}
+            <tr>
+                <td>{{ time|time:"H:i" }}</td>
+                {% for plank in tagenda %}
+                    <td>{{ plank.title }} ({{ plank.author }})</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endfor %}
+
+{% endblock %}

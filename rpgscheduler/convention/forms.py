@@ -3,7 +3,8 @@ from datetime import datetime, timedelta
 
 from django.forms import (
     Form, ValidationError,
-    CharField, DateTimeField, Textarea, BooleanField
+    IntegerField, CharField, DateTimeField, BooleanField,
+    Textarea, HiddenInput
 )
 
 
@@ -18,6 +19,7 @@ Můžete použí standardní Czechtile prvky, jako ""kurzívu"".
 
 Ozvláštněte to jak můžete :o)
     """)
+    place = CharField(label=u"Místo konání", max_length=255)
     is_public = BooleanField(required=False)
     facebook_publish = BooleanField(required=False)
 
@@ -30,3 +32,6 @@ Ozvláštněte to jak můžete :o)
             raise ValidationError(u"Akce musí skončit až po svém začátku")
         
         return self.cleaned_data
+
+class AgendaForm(EventForm):
+    is_public = None

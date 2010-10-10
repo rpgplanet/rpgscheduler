@@ -37,6 +37,11 @@
 
 {% endautoescape %}
 
+{% if user in event.user_authors %}
+<p><a href="{% url con:agenda-edit event_id=event.pk %}">Upravit program</a></p>
+{% endif %}
+
+
 <div id="fb-root"></div>
 <script>
 

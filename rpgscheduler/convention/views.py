@@ -10,7 +10,7 @@ from django.core.urlresolvers import reverse
 from ellaschedule.models import Event, Occurrence
 
 from rpgscheduler.convention.events import create_event
-from rpgscheduler.convention.forms import EventForm
+from rpgscheduler.convention.forms import EventForm, AgendaForm
 
 def home(request, template='con/home.html', max_occurrences=10, oldest_occurence_interval=None):
     """
@@ -66,7 +66,7 @@ def profile(request, year, month, day, slug, template='con/event.html'):
     except ValueError:
         raise Http404()
     
-    events = Event.objects.filter(
+    events = Event.objects.select_related().filter(
         start__gte = day,
         end__lt = (day + timedelta(days=1)),
         slug = slug
@@ -83,3 +83,31 @@ def profile(request, year, month, day, slug, template='con/event.html'):
         'event' : event,
     }, context_instance=RequestContext(request))
 
+
+@login_required
+def agenda_edit(request, event_id, template='con/agenda_edit.html'):
+    event = get_object_or_404(Event, pk=event_id)
+
+#    if request.user not in event.user_authors:
+#        raise Http403()
+
+    if request.method == "POST":
+        #TODO: Verify that agenda is inside event time
+        #TODO: Author might not be user / request.user
+        agenda_form = AgendaForm(request.POST)
+        if agenda_form.is_valid():
+            create_event(
+                parent = event,
+                author = request.user,
+                **agenda_form.cleaned_data
+            )
+            return HttpResponseRedirect(reverse('con:agenda-edit', kwargs={'event_id' : event.pk}))
+
+    else:
+        agenda_form = AgendaForm()
+
+    return render_to_response(template, {
+        'agenda_form' : agenda_form,
+        'event' : event,
+        'agenda' : event.get_structured_agenda()
+    }, context_instance=RequestContext(request))

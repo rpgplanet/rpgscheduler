@@ -5,7 +5,7 @@ from ella.core.models import Author, Category
 
 from ellaschedule.models import Event
 
-def create_event(title, start, end, description, is_public, facebook_publish, author, calendar=None):
+def create_event(title, start, end, description, is_public, facebook_publish, author, calendar=None, parent=None, place=None):
 
     try:
         root_category = Category.objects.get(
@@ -23,7 +23,7 @@ def create_event(title, start, end, description, is_public, facebook_publish, au
 
 
 
-    author = Author.objects.get_or_create(
+    ella_author = Author.objects.get_or_create(
             user = author,
             name = author.username,
             slug = slugify(author.username)
@@ -33,17 +33,24 @@ def create_event(title, start, end, description, is_public, facebook_publish, au
     if calendar:
         opts['calendar'] = calendar
 
+    # we're not interested in (mili) seconds in events...and they lead to feaky things
+    start = start.replace(second=0, microsecond=0)
+    end = end.replace(second=0, microsecond=0)
+
     event = Event.objects.create(
         title = title,
         slug = slugify(title),
         start = start,
         end = end,
         category = root_category,
+        creator = author,
+        parent_event = parent,
+        place = place,
         **opts
     )
 
     event.djangomarkup_description = description
-    event.authors.add(author)
+    event.authors.add(ella_author)
     event.save()
 
     # if is_public add to public calendar
