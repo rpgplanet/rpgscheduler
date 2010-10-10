@@ -4,6 +4,12 @@
 
 <h1>Úprava programu akce {{ event.title }}</h1>
 
+<script type="text/javascript">
+    window.addEvent('domready', function() {
+        var calendar = new Calendar({ id_start: 'Y-m-d G:i', id_end: 'Y-m-d G:i' });
+    });
+</script>
+
 <form action="." method="post">
     <p>
         {{ agenda_form.title.errors }}
