@@ -1,0 +1,35 @@
+{% extends "main.html" %}
+
+{% block content %}
+    <h1 name="table-title">{{ table.title }}</h1>
+    <form id="comment-add" method="post">
+        {% csrf_token %}
+        <script type="text/javascript">
+        <!--
+        $(document).ready(function() {
+            $('#id_text').markItUp(CTTASettings);
+        });
+        -->
+        </script>
+        {{ form.as_p }}
+        <input type="submit" name="Odeslat" />
+    </form>
+
+    <form name="control" method="post">
+    {{ formset.management_form }}
+    {% csrf_token %}
+    <p>Group actions: <input type="submit" name="control-action" value="Delete" /></p>
+    <div id="comments">
+    {% for comment, comment_form in comments %}
+        <div class="comment" name="comment">
+            <div class="text" name="text">
+                {% autoescape off %}
+                    {{ comment.text }}
+                {% endautoescape %}
+            </div>
+            {{ comment_form }}
+        </div>
+    {% endfor %}
+    </div>
+    </form>
+{% endblock %}

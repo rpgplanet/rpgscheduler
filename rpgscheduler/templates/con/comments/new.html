@@ -1,0 +1,18 @@
+{% extends "main.html" %}
+
+{% block content %}
+
+<script type="text/javascript">
+    window.addEvent('domready', function() {
+        var calendar = new Calendar({ id_start: 'Y-m-d G:i', id_end: 'Y-m-d G:i' });
+    });
+</script>
+
+<h1>Založit fórum k akci {{ event.title }}</h1>
+
+<form action="." method="post">
+    {{ table_form.as_p }}
+    <p><input type="submit" value="Založ fórum" name="new"></p>
+</form>
+
+{% endblock %}

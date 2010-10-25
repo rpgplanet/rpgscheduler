@@ -75,6 +75,11 @@
     {% endfor %}
 {% endif %}
 
+<h2>Diskuze</h2>
+{% if user in event.user_authors %}
+    <p><a href="{% url con:event-comments-create event_id=event.pk %}">Založit fórum</a></p>
+{% endif %}
+
 <div id="fb-root"></div>
 <script>
 

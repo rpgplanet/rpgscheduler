@@ -25,6 +25,7 @@ js_info_dict = {
 from rpgscheduler.convention.views import profile
 from rpgscheduler.convention import urls as conurls
 from rpgscheduler.service import urls as serviceurls
+from esus.phorum import urls as esusurls
 from rpgcommon.user import urls as userurls
 
 urlpatterns = patterns('',
@@ -34,6 +35,7 @@ urlpatterns = patterns('',
 
     # ellaschedule compatibility (Event().get_absolute_url() cannot be namespaced)
     url(r'^akce/(\d+)/$', profile, name='event'),
+    url(r'^forum/', include(esusurls)),
 )
 
 if settings.DEBUG:

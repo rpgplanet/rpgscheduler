@@ -1,4 +1,3 @@
-from django.http import Http404
 from datetime import datetime, timedelta
 
 from django.http import HttpResponseRedirect, HttpResponseBadRequest
@@ -9,8 +8,10 @@ from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
 
 from ellaschedule.models import Event, Occurrence
+from esus.phorum.forms import TableCreationForm
 
 from rpgscheduler.convention.events import create_event
+from rpgscheduler.convention.comments import create_table
 from rpgscheduler.convention.forms import EventForm, AgendaForm
 
 def home(request, template='con/home.html', max_occurrences=10, oldest_occurence_interval=None):
@@ -123,4 +124,29 @@ def agenda_edit(request, event_id, agenda_id=None, template='con/agenda_edit.htm
         'event' : event,
         'agenda' : agenda,
         'agendas' : event.get_structured_agenda()
+    }, context_instance=RequestContext(request))
+
+
+def comments_create(request, event_id, template='con/comments/new.html'):
+    event = get_object_or_404(Event, pk=event_id)
+
+    if request.method == "POST":
+        table_form = TableCreationForm(request.POST)
+        if table_form.is_valid():
+            table, category = create_table(
+                event = event,
+                owner = request.user,
+                **table_form.cleaned_data
+            )
+            return HttpResponseRedirect(reverse('esus-phorum-table', kwargs={
+                'category' : category.slug,
+                'table' : table.slug,
+            }))
+    else:
+        table_form = TableCreationForm()
+
+
+    return render_to_response(template, {
+        'event' : event,
+        'table_form' : table_form,
     }, context_instance=RequestContext(request))
