@@ -1,0 +1,31 @@
+{% extends "main.html" %}
+
+{% block content %}
+
+<h1>Moje akce</h1>
+
+
+<table>
+    <thead>
+        <tr>
+            <th>Událost</th>
+            <th>Začíná</th>
+            <th>Končí</th>
+            <th>Akce</th>
+        </tr>
+    </thead>
+{% for event in events %}
+    <tr>
+        <td><a href="{% url con:event-profile event_id=event.pk %}">{{ event.title }}</a></td>
+        <td>{{ event.start }}</td>
+        <td>{{ event.end }}</td>
+        <td>&nbsp;</td>
+    </tr>
+{% empty %}
+    <tr>
+        <td colspan="4">Neúčastníš se žádné události, ani jsi žádnou nezaložil.</td>
+    </tr>
+{% endfor %}
+</table>
+
+{% endblock %}

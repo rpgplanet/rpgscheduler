@@ -7,6 +7,7 @@ from django.template import RequestContext
 from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
 
+from ella.core.models import Author
 from ellaschedule.models import Event, Occurrence
 from esus.phorum.forms import TableCreationForm
 
@@ -65,6 +66,20 @@ def profile(request, event_id, template='con/event.html'):
     return render_to_response(template, {
         'event' : event,
         'agendas' : event.get_structured_agenda(),
+    }, context_instance=RequestContext(request))
+
+@login_required
+def events_personal(request, template='con/list.html'):
+    """
+    Show personal events.
+    Personal events = those I have founded or I am attending to.
+    """
+    events = Event.objects.filter(
+        authors = Author.objects.filter(user=request.user)
+    )
+
+    return render_to_response(template, {
+        'events' : events,
     }, context_instance=RequestContext(request))
 
 

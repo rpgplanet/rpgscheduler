@@ -41,7 +41,8 @@
       <div id="h-switch-end"></div>
       <div id="h-menu">
           {% if user.is_authenticated %}
-              <p>Přihlášen jako {{ user.username }}. <a href="{% url registration:logout %}">Odhlásit</a></p>
+          <p>Přihlášen jako {{ user.username }}.<a href="{% url con:events-personal %}">Moje akce</a>
+                  <a href="{% url registration:logout %}">Odhlásit</a></p>
           {% else %}
               <a href="{% url registration:login %}">Přihlášení</a>
           {% endif %}
