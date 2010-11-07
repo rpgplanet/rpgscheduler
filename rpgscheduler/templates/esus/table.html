@@ -33,10 +33,9 @@
     <ul id="comments">
     {% for comment, comment_form in comments %}
         <li class="comment" name="comment">
-            <!-- {{ comment_form }} -->
             <div class="clearfix">
                 <div class="a"><a href="http://{{ comment.author.get_profile.site.domain }}">{% avatar comment.author 50 %}</a></div>
-                <div class="h">{{ comment.author }}&nbsp;&nbsp;&nbsp;{{ comment.date }}</div>
+                <div class="h">{{ comment.author }}&nbsp;&nbsp;{{ comment_form.DELETE }}{{ comment_form.pk }}&nbsp;&nbsp;{{ comment.date }}</div>
                 <div class="text" name="text">
                     {% autoescape off %}
                         {{ comment.text }}
@@ -51,4 +50,8 @@
     {% endfor %}
     </ul>
     </form>
+
+    {% if next_page_pk %}
+    <p><a href="{% url esus-phorum-table-paginated category=category.slug,table=table.slug,from_pk=next_page_pk,page_number=next_page_number %}">Pokračovat na stranu {{ next_page_number }}</a></p>
+    {% endif %}
 {% endblock %}
