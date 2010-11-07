@@ -304,3 +304,37 @@ input {
 	padding-left: 18px;
 }
 
+.table-description {
+    font-style: italic;
+}
+
+#comments {
+    list-style-type: none;
+}
+
+#comments .comment {
+    position: relative;
+    min-height: 60px;
+}
+
+
+#comments .comment .a {
+    width: 50px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+#comments .comment img {
+    border: none;
+}
+
+#comments .comment .h {
+    margin-left: 55px;
+    position: relative;
+}
+
+#comments .comment .text {
+    position: relative;
+    margin-left: 55px;
+}

@@ -1,35 +1,54 @@
 {% extends "main.html" %}
+{% load avatar_tags %}
 
 {% block content %}
     <h1 name="table-title">{{ table.title }}</h1>
+    <p class="table-description">{{ table.description }}</p>
     <form id="comment-add" method="post">
         {% csrf_token %}
-        <script type="text/javascript">
         <!--
+        <script type="text/javascript">
         $(document).ready(function() {
             $('#id_text').markItUp(CTTASettings);
         });
-        -->
         </script>
-        {{ form.as_p }}
-        <input type="submit" name="Odeslat" />
+        -->
+        <p>
+            {{ form.text.errors }}
+            {{ form.text }}
+        </p>
+        <input type="submit" name="odeslat" value="Odeslat" />
     </form>
+
+    {% ifequal table.owner user %}
+        <ul id="table-navigation">
+            <li><a href="{% url esus-phorum-table-settings-access table=table.slug category=category.slug %}" name="access">Nastavení práv</a></li>
+        </ul>
+    {% endifequal %}
 
     <form name="control" method="post">
     {{ formset.management_form }}
     {% csrf_token %}
     <p>Group actions: <input type="submit" name="control-action" value="Delete" /></p>
-    <div id="comments">
+    <ul id="comments">
     {% for comment, comment_form in comments %}
-        <div class="comment" name="comment">
-            <div class="text" name="text">
-                {% autoescape off %}
-                    {{ comment.text }}
-                {% endautoescape %}
+        <li class="comment" name="comment">
+            <!-- {{ comment_form }} -->
+            <div class="clearfix">
+                <div class="a"><a href="http://{{ comment.author.get_profile.site.domain }}">{% avatar comment.author 50 %}</a></div>
+                <div class="h">{{ comment.author }}&nbsp;&nbsp;&nbsp;{{ comment.date }}</div>
+                <div class="text" name="text">
+                    {% autoescape off %}
+                        {{ comment.text }}
+                    {% endautoescape %}
+                </div>
+                <div class="c"></div>
             </div>
-            {{ comment_form }}
-        </div>
+
+        </li>
+    {% empty %}
+        <li>Zatím nebyl přidán žádný příspěvek</li>
     {% endfor %}
-    </div>
+    </ul>
     </form>
 {% endblock %}
