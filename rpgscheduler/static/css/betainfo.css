@@ -152,13 +152,12 @@ html, body {
 }
 
 #footer2 {
-	margin: 0.5em;
+  margin: auto;
 	position: relative;
 	width: 960px;
-        text-align: center;
+  text-align: center;
+  padding-top: 0.5em;
 }
-
-
 
 /* - - - - - Hlavní prvky - - - - - */
 h2 {
@@ -211,7 +210,9 @@ a {
 a:hover {
 	color: #000;
 }
+
 /* - - - - - Formuláře - - - - - */
+
 table {
 	margin: 0 0 0 10px;
 	padding: 0;
@@ -338,3 +339,8 @@ input {
     position: relative;
     margin-left: 55px;
 }
+
+ul.prihlas {
+  list-style: none;
+}
+
