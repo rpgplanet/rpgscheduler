@@ -17,28 +17,56 @@
 
 {% if user.is_authenticated %}
     <div id="rvsp">
-        <form method="post">
-            <fieldset>
-                <label>Zúčastníš se?</label>
-                <ul>
-                    <li><label accesskey="a"><input type="radio" value="yes" name="rvsp" />Ano</label></li>
-                    <li><label accesskey="n"><input type="radio" value="no" name="rvsp" />Ne</label></li>
-                    <li><label accesskey="m"><input type="radio" value="maybe" name="rvsp" />Možná</label></li>
-                </ul>
-                <input type="submit" value="Potvrď" />
-            </fieldset>
-        </form>
+    	{% if event.start and event.end %}
+	        <form method="post">
+	            <fieldset>
+	                <label>Zúčastníš se?</label>
+	                <ul>
+	                    <li><label accesskey="a"><input type="radio" value="yes" name="rvsp" />Ano</label></li>
+	                    <li><label accesskey="n"><input type="radio" value="no" name="rvsp" />Ne</label></li>
+	                    <li><label accesskey="m"><input type="radio" value="maybe" name="rvsp" />Možná</label></li>
+	                </ul>
+	                <input type="submit" value="Potvrď" />
+	            </fieldset>
+	        </form>
+	    {% else %}
+	    	{% if event.date_proposals %}
+		        <form method="post">
+		            <fieldset>
+		                <label>Které termíny ti vyhovují?</label>
+		                <table>
+		                	{{ event.proposal_form.as_table }}
+
+		                	{% comment %}
+			                	{% for proposal in event.date_proposals %}
+			                		<tr>
+			                			<th>{{ proposal.date }}</th><td></td>
+			                		</tr>
+				                {% endfor %}
+			                {% endcomment %}
+		                </table>
+		                <input type="submit" value="Potvrď" />
+		            </fieldset>
+		        </form>
+    	
+	    	{% else %}
+	    	     <!-- Datum jeste neni vybrano -->
+	    	     <!-- FIXME: Zobrazit neco inteligentniho -->
+	    	{% endif %}
+	    	
+	    {% endif %}
     </div>
 {% endif %}
 
 {% autoescape off %}
-
-{{ event.description }}
-
+	{{ event.description }}
 {% endautoescape %}
 
 {% if user in event.user_authors %}
-<p><a href="{% url con:agenda-edit event_id=event.pk %}">Upravit program</a></p>
+	<p><a href="{% url con:agenda-edit event_id=event.pk %}">Upravit program</a></p>
+	{% if not event.start and not event.end %}
+		<p><a href="{% url con:event-occurrence-proposal event_id=event.pk %}">Navrhnout termín</a></p>
+	{% endif %}
 {% endif %}
 
 {% if agendas %}

@@ -18,6 +18,12 @@
     </p>
 
     <p>
+        {{ event_form.date_available.errors }}
+        <label for="id_start">{{ event_form.date_available.label }}:</label>
+        {{ event_form.date_available }}
+    </p>
+
+    <p>
         {{ event_form.start.errors }}
         <label for="id_start">Začátek:</label>
         {{ event_form.start }}
@@ -39,11 +45,14 @@
         {{ event_form.is_public }}
         <label for="id_is_public">veřejná akce (zobrazí se na úvodní stránce)</label>
     </p>
+    
+    <!--
     <p>
         {{ event_form.facebook_publish.errors }}
         {{ event_form.facebook_publish }}
         <label for="id_facebook_publish">založit na Facebooku</label>
     </p>
+    -->
 
     <p><input type="submit" value="Založ akci" name="new"></p>
 </form>

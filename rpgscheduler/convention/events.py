@@ -5,7 +5,7 @@ from ella.core.models import Author, Category
 
 from ellaschedule.models import Event
 
-def create_event(title, start, end, description, is_public, facebook_publish, author, calendar=None, parent=None, place=None):
+def create_event(title, start, end, description, is_public, facebook_publish, author, calendar=None, parent=None, place=None, date_available=None):
 
     try:
         root_category = Category.objects.get(
@@ -34,8 +34,10 @@ def create_event(title, start, end, description, is_public, facebook_publish, au
         opts['calendar'] = calendar
 
     # we're not interested in (mili) seconds in events...and they lead to feaky things
-    start = start.replace(second=0, microsecond=0)
-    end = end.replace(second=0, microsecond=0)
+    if start:
+        start = start.replace(second=0, microsecond=0)
+    if end:
+        end = end.replace(second=0, microsecond=0)
 
     event = Event.objects.create(
         title = title,

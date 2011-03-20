@@ -1,0 +1,49 @@
+{% extends "main.html" %}
+
+{% block content %}
+
+<h1><a href="{% url con:event-profile event_id=event.pk %}">{{ event.title }}</a> &ndash; návrhy termínů</h1>
+
+
+{% if proposals %}
+	<form method="post">
+{{ proposal_voting_form }}
+<input type="submit" name="vote" value="Hlasuj pro terminy">
+</form>
+
+<!--
+	<form method="post">
+		<table>
+			<thead>
+				{% for proposal in proposals %}
+				    <th>{{ proposal.start }} &ndash; {{ proposal.end }}</th>
+				{% endfor %}
+			</thead>
+			{% if user.is_authenticated %}
+				<tbody>
+					<tr>
+						{% for proposal in proposals %}
+						    <td><input type="checkbox" name="{{ proposal.id }}"></td>
+						{% endfor %}
+					</tr>
+					<tr>
+						<td colspan="{{ proposal|length }}"><input type="submit" name="vote" value="Hlasuj pro terminy">
+					</tr>
+				</tbody>
+			{% endif %}
+		</table>
+	</form>
+-->
+{% endif %}
+
+<h2>Navrhnout novy termin</h2>
+
+{% if user in event.user_authors %}
+<form method="post">
+	{{ proposal_creation_form.as_p }}
+	<input type="submit" name="create_proposal" value="Odeslat termin">
+</form>
+{% endif %}
+
+
+{% endblock %}

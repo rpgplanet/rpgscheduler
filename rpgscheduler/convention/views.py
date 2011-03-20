@@ -13,7 +13,8 @@ from esus.phorum.forms import TableCreationForm
 
 from rpgscheduler.convention.events import create_event
 from rpgscheduler.convention.comments import create_table
-from rpgscheduler.convention.forms import EventForm, AgendaForm
+from rpgscheduler.convention.forms import EventForm, AgendaForm, ProposalCreationForm, ProposalVotingForm
+from rpgscheduler.convention.models import Proposal, ProposalVote
 
 def home(request, template='con/home.html', max_occurrences=10, oldest_occurence_interval=None):
     """
@@ -67,6 +68,65 @@ def profile(request, event_id, template='con/event.html'):
         'event' : event,
         'agendas' : event.get_structured_agenda(),
     }, context_instance=RequestContext(request))
+
+
+@login_required
+def occurrence_proposal(request, event_id, template="con/occurrence_proposal.html"):
+    event = get_object_or_404(Event, pk=event_id)
+    proposals = Proposal.objects.filter(event=event)
+    
+    proposal_creation_form = None
+    proposal_voting_form = None
+    
+    if request.method == "POST":
+        if 'vote' in request.POST:
+            proposal_voting_form = ProposalVotingForm(proposals=proposals, post=request.POST)
+            
+            if proposal_voting_form.is_valid():
+                ProposalVote.objects.filter(user=request.user, proposal__in=proposals).delete()
+                
+                for pk in proposal_voting_form.cleaned_data['votes']:
+                    ProposalVote.objects.create(
+                        user = request.user,
+                        proposal = Proposal.objects.get(pk=pk, event=event)
+                    )
+
+                return HttpResponseRedirect(reverse("con:event-occurrence-proposal", kwargs={
+                    'event_id' : event.pk
+                }))
+                
+            
+        elif 'create_proposal' in request.POST:
+            proposal_creation_form = ProposalCreationForm(request.POST)
+            
+            if proposal_creation_form.is_valid():
+                
+                Proposal.objects.create(
+                    start = proposal_creation_form.cleaned_data['start'],
+                    end = proposal_creation_form.cleaned_data['end'],
+                    event = event
+                )
+                
+                return HttpResponseRedirect(reverse("con:event-occurrence-proposal", kwargs={
+                    'event_id' : event.pk
+                }))
+        else:
+            return HttpResponseBadRequest()
+    
+    if not proposal_voting_form:
+        proposal_voting_form = ProposalVotingForm(proposals=proposals, initial={'votes' : [str(p.proposal.pk) for p in ProposalVote.objects.select_related('proposal').filter(user=request.user, proposal__in=proposals)]})
+        
+    if not proposal_creation_form:
+        proposal_creation_form = ProposalCreationForm()
+    
+    return render_to_response(template, {
+        'event' : event,
+        'proposals' : proposals,
+        'proposal_voting_form' : proposal_voting_form, 
+        'proposal_creation_form' : proposal_creation_form,
+        
+    }, context_instance=RequestContext(request))
+
 
 @login_required
 def events_personal(request, template='con/list.html'):
